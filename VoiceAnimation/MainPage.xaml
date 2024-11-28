@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VoiceAnimation"
+             x:Class="VoiceAnimation.MainPage">
+
+    <VerticalStackLayout>
+        <VerticalStackLayout Spacing="20"
+                             Padding="20">
+            <local:DynamicBarAnimationView x:Name="BarAnimationView"
+                                           HeightRequest="200"
+                                           WidthRequest="300"
+                                           AnimationSpeed="500"
+                                           CornerRadius="12"
+                                           SpacingFactor="3"
+                                           MaxHeight="45"
+                                           MinHeight="30"
+                                           BarColor="gray" />
+            <Button Text="Start Animation"
+                    Clicked="StartAnimation_Clicked" />
+            <Button Text="Stop Animation"
+                    Clicked="StopAnimation_Clicked" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <local:VoiceWeaveView x:Name="VoiceWeave"
+                                  HeightRequest="200"
+                                  WidthRequest="400" />
+            <Slider x:Name="AmplitudeSlider"
+                    Minimum="0"
+                    Maximum="100"
+                    ValueChanged="AmplitudeSlider_ValueChanged" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <local:VoiceRecorderView x:Name="VoiceRecorder"
+                                     HeightRequest="300"
+                                     WidthRequest="300" />
+            <Slider x:Name="AmplitudeSlider1"
+                    Minimum="0"
+                    Maximum="100"
+                    ValueChanged="AmplitudeSlider_ValueChanged1" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>
